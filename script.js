@@ -1,5 +1,5 @@
 let swiper = null;
-const breakpoint = window.matchMedia('(max-width: 320px)');
+const breakpoint = window.matchMedia('(max-width: 768px)');
 
 function initSwiper() {
   if(breakpoint.matches && !swiper) {
