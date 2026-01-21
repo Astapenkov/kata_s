@@ -6,6 +6,11 @@
     font-weight: 500;
   }
 
+  body{
+    margin: 0;
+    padding: 0;
+  }
+
     .block-with-links_heading {
      font-weight: 400;
      font-size: 16px;
@@ -89,8 +94,8 @@
     }
     
     .block-with-links_heading{
-        margin: 16px 16px;
-        width: 320px;
+        padding: 16px;
+        max-width: 768px;
 
     }
 
@@ -109,8 +114,8 @@
     .swiper-pagination {
         position: absolute !important;
         top:104px !important;
-        text-align: start !important;
-        padding-left: 48px;
+        text-align: center;
+        
 }
 
 
