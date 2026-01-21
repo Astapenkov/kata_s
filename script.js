@@ -12,7 +12,7 @@ function initSwiper() {
      clickable: true,
   },
 });
-  } else {
+  } else if(!breakpoint.matches && swiper){
     swiper.destroy(true, true);
     swiper = null;
   }
