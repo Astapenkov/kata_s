@@ -92,6 +92,8 @@
     .block-with-links_heading{
         margin: 0 auto;
         padding: 16px 16px;
+        width: 320px;
+
     }
 
     .swiper-wrapper {
@@ -175,6 +177,7 @@
 
     .block-with-links_heading{
         padding: 16px 24px;
+        width: 768px;
     }
 
     .block-with-links_container.swiper-slide {
