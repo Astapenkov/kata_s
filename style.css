@@ -164,7 +164,8 @@
         height: 56px;
     }
 
-    .block-with-links.swiper{
+    .block-with-links.swiper,
+    .swiper-wrapper{
         width: 768px;
     }
 
@@ -184,9 +185,8 @@
         flex-direction: row;
         flex-wrap: wrap;
         margin-left: 32px;
-        
-       
     }
+
 
     .block-with-links_container.swiper-slide {
         margin-top: 16px;
