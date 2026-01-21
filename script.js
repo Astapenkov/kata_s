@@ -1,38 +1,43 @@
-const swiper = new Swiper('.swiper', {
-  slidesPerView: 'auto',
-  spaceBetween: 16,
-  loop: false,
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
+let swiper = null;
+const breakpoint = window.matchMedia('(max-width: 320px)');
+
+function initSwiper() {
+  if(breakpoint.matches && !swiper) {
+    swiper = new Swiper('.swiper', {
+     slidesPerView: 'auto',
+     spaceBetween: 16,
+     loop: false,
+     pagination: {
+     el: '.swiper-pagination',
+     clickable: true,
   },
 });
+  } else if (!breakpoint.matches && swiper) {
+    swiper.destroy(true, true);
+    swiper = null;
+  }
+}
+
+initSwiper();
+breakpoint.addEventListener('change', initSwiper);
 
 
-let BTN = document.querySelector('.block-with-links_hide_show_button')
+let btn = document.querySelector('.block-with-links_hide_show_button')
+let isOpen = false;
+btn.innerHTML = '<img class="block-with-links_hide_show_button__show show" src="img/icon3.svg" alt="the show everything button"><span>Показать все</span>'
 let showBtn = document.querySelectorAll('.block-with-links_hide_show_button__hide_button')
-let hideBtn = document.querySelectorAll('.block-with-links_hide_show_button__show_button')
 let hideContent = document.querySelectorAll('.block-with-links_container.swiper-slide')
 
-BTN.addEventListener('click', function() {
-  showBtn.forEach(el => {
-    el.classList.toggle('show')
-    
-   
-    
-  })
+btn.addEventListener('click', function(){
+  isOpen = !isOpen;
 
-  hideBtn.forEach(el => {
-    el.classList.toggle('hide')
-   
-    
-    
-  })
+  showBtn.forEach(el => {
+    el.classList.toggle('show', isOpen);
+  });
 
   hideContent.forEach(el => {
     el.classList.toggle('hidden-content')
   })
 
-  
-  console.log(showBtn)
+  btn.innerHTML = isOpen ? '<img class="block-with-links_hide_show_button__hide " src="img/icon1.svg" alt="hide button"><span>Скрыть</span>': '<img class="block-with-links_hide_show_button__show show" src="img/icon3.svg" alt="the show everything button"> <span>Показать все</span>'
 })
