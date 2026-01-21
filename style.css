@@ -84,7 +84,7 @@
     
 
     .header {
-        width: 320px;
+        max-width: 768px;
         height: 80px;
     }
     
@@ -103,7 +103,6 @@
      position: relative;
      min-height: 180px; 
      padding-bottom: 40px; 
-     max-width:512px;
      margin: 0;
     }
 
